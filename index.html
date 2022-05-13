@@ -10,17 +10,44 @@
   
   <script>
     console.log("Hello World!");
-    let randomComputerNum = Math.floor(Math.random() * 3 + 1);
-    console.log(randomComputerNum);
+    let playerTurn = prompt("Choose your weapon 🪨 📃 ✂️:").toUpperCase();
+    
+    while(playerTurn !== "ROCK" && playerTurn !== "PAPER" && playerTurn !== "SCISSORS"){
+      alert("INVALID input, try again!");
+      playerTurn = prompt("Choose your weapon 🪨 📃 ✂️:").toUpperCase();
+    }
+    console.log(playerTurn);
+
+    let randomComputerNum = Math.floor(Math.random() * 3) + 1;
     let computerTurn;
     if(randomComputerNum === 1){
-      computerTurn = "Rock";
+      computerTurn = "ROCK";
     } else if(randomComputerNum === 2){
-      computerTurn = "Paper";
+      computerTurn = "PAPER";
     } else {
-      computerTurn = "Scissors";
+      computerTurn = "SCISSORS";
     }
     console.log(computerTurn);
+
+    if(playerTurn === computerTurn){
+      alert("It's a TIE!");
+
+    } else if(playerTurn === "ROCK" && computerTurn === "SCISSORS"){
+      alert("You WIN!");
+    } else if(playerTurn === "ROCK" && computerTurn === "PAPER"){
+      alert("You LOSE!");
+    } else if(playerTurn === "PAPER" && computerTurn === "ROCK"){
+      alert("You WIN!");
+    } else if(playerTurn === "PAPER" && computerTurn === "SCISSORS"){
+      alert("You LOSE!");
+    } else if(playerTurn === "SCISSORS" && computerTurn === "PAPER"){
+      alert("You WIN!");
+    } else if(playerTurn === "SCISSORS" && computerTurn === "ROCK"){
+      alert("You LOSE!");
+    };
+
+    
+
 
   </script>
 
